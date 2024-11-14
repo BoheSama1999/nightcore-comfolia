@@ -102,16 +102,16 @@ public class ArgumentTypes {
     @NotNull
     public static ArgumentBuilder<Player> player(@NotNull String name) {
         return CommandArgument.builder(name, PLAYER)
-            .localized(CoreLang.COMMAND_ARGUMENT_NAME_PLAYER)
-            .customFailure(CoreLang.ERROR_COMMAND_INVALID_PLAYER_ARGUMENT)
-            .withSamples(tabContext -> Players.playerNames(tabContext.getPlayer()));
+                .localized(CoreLang.COMMAND_ARGUMENT_NAME_PLAYER)
+                .customFailure(CoreLang.ERROR_COMMAND_INVALID_PLAYER_ARGUMENT)
+                .withSamples(tabContext -> Players.playerNames(tabContext.getPlayer()));
     }
 
     @NotNull
     public static ArgumentBuilder<String> playerName(@NotNull String name) {
         return CommandArgument.builder(name, STRING)
-            .localized(CoreLang.COMMAND_ARGUMENT_NAME_PLAYER)
-            .withSamples(tabContext -> Players.playerNames(tabContext.getPlayer()));
+                .localized(CoreLang.COMMAND_ARGUMENT_NAME_PLAYER)
+                .withSamples(tabContext -> Players.playerNames(tabContext.getPlayer()));
     }
 
     @NotNull
@@ -125,29 +125,29 @@ public class ArgumentTypes {
     @NotNull
     public static ArgumentBuilder<Material> material(@NotNull String name) {
         return CommandArgument.builder(name, MATERIAL)
-            .localized(CoreLang.COMMAND_ARGUMENT_NAME_MATERIAL)
-            .customFailure(CoreLang.ERROR_COMMAND_INVALID_MATERIAL_ARGUMENT);
+                .localized(CoreLang.COMMAND_ARGUMENT_NAME_MATERIAL)
+                .customFailure(CoreLang.ERROR_COMMAND_INVALID_MATERIAL_ARGUMENT);
     }
 
     @NotNull
     public static ArgumentBuilder<Material> itemMaterial(@NotNull String name) {
         return CommandArgument.builder(name, ITEM_MATERIAL)
-            .localized(CoreLang.COMMAND_ARGUMENT_NAME_ITEM_MATERIAL)
-            .customFailure(CoreLang.ERROR_COMMAND_INVALID_MATERIAL_ARGUMENT);
+                .localized(CoreLang.COMMAND_ARGUMENT_NAME_ITEM_MATERIAL)
+                .customFailure(CoreLang.ERROR_COMMAND_INVALID_MATERIAL_ARGUMENT);
     }
 
     @NotNull
     public static ArgumentBuilder<Material> blockMaterial(@NotNull String name) {
         return CommandArgument.builder(name, BLOCK_MATERIAL)
-            .localized(CoreLang.COMMAND_ARGUMENT_NAME_BLOCK_MATERIAL)
-            .customFailure(CoreLang.ERROR_COMMAND_INVALID_MATERIAL_ARGUMENT);
+                .localized(CoreLang.COMMAND_ARGUMENT_NAME_BLOCK_MATERIAL)
+                .customFailure(CoreLang.ERROR_COMMAND_INVALID_MATERIAL_ARGUMENT);
     }
 
     @NotNull
     public static ArgumentBuilder<Enchantment> enchantment(@NotNull String name) {
         return CommandArgument.builder(name, ENCHANTMENT)
-            .localized(CoreLang.COMMAND_ARGUMENT_NAME_ENCHANTMENT)
-            .customFailure(CoreLang.ERROR_COMMAND_INVALID_ENCHANTMENT_ARGUMENT);
+                .localized(CoreLang.COMMAND_ARGUMENT_NAME_ENCHANTMENT)
+                .customFailure(CoreLang.ERROR_COMMAND_INVALID_ENCHANTMENT_ARGUMENT);
     }
 
     /*@NotNull

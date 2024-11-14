@@ -18,10 +18,6 @@ public class RankMap<T extends Number> {
     private final T              defaultValue;
     private final Map<String, T> values;
 
-    public enum Mode {
-        RANK, PERMISSION
-    }
-
     public RankMap(@NotNull Mode mode, @NotNull String permissionPrefix, @NotNull T defaultValue, @NotNull Map<String, T> values) {
         this.mode = mode;
         this.permissionPrefix = permissionPrefix;
@@ -173,5 +169,9 @@ public class RankMap<T extends Number> {
     @NotNull
     public T getDefaultValue() {
         return defaultValue;
+    }
+
+    public enum Mode {
+        RANK, PERMISSION
     }
 }

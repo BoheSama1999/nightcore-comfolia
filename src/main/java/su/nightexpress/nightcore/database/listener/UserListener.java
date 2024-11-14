@@ -6,6 +6,7 @@ import org.bukkit.event.player.AsyncPlayerPreLoginEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.jetbrains.annotations.NotNull;
 import su.nightexpress.nightcore.NightDataPlugin;
+import su.nightexpress.nightcore.core.CoreConfig;
 import su.nightexpress.nightcore.database.AbstractUserManager;
 import su.nightexpress.nightcore.database.DataUser;
 import su.nightexpress.nightcore.manager.AbstractListener;

@@ -62,8 +62,7 @@ public class Reflex {
             Constructor<?> constructor = source.getDeclaredConstructor(types);
             constructor.setAccessible(true);
             return constructor;
-        }
-        catch (ReflectiveOperationException exception) {
+        } catch (ReflectiveOperationException exception) {
             exception.printStackTrace();
         }
         return null;
@@ -72,8 +71,7 @@ public class Reflex {
     public static Object invokeConstructor(@NotNull Constructor<?> constructor, Object... obj) {
         try {
             return constructor.newInstance(obj);
-        }
-        catch (ReflectiveOperationException exception) {
+        } catch (ReflectiveOperationException exception) {
             exception.printStackTrace();
         }
         return null;
@@ -93,8 +91,7 @@ public class Reflex {
 
             try {
                 list.add(type.cast(field.get(null)));
-            }
-            catch (IllegalArgumentException | IllegalAccessException exception) {
+            } catch (IllegalArgumentException | IllegalAccessException exception) {
                 exception.printStackTrace();
             }
         }
@@ -110,8 +107,7 @@ public class Reflex {
         while (clazz != null && clazz != Object.class) {
             if (!result.isEmpty()) {
                 result.addAll(0, Arrays.asList(clazz.getDeclaredFields()));
-            }
-            else {
+            } else {
                 Collections.addAll(result, clazz.getDeclaredFields());
             }
             clazz = clazz.getSuperclass();
@@ -123,8 +119,7 @@ public class Reflex {
     public static Field getField(@NotNull Class<?> source, @NotNull String name) {
         try {
             return source.getDeclaredField(name);
-        }
-        catch (NoSuchFieldException exception) {
+        } catch (NoSuchFieldException exception) {
             Class<?> superClass = source.getSuperclass();
             return superClass == null ? null : getField(superClass, name);
         }
@@ -138,8 +133,7 @@ public class Reflex {
 
             field.setAccessible(true);
             return field.get(source);
-        }
-        catch (IllegalAccessException exception) {
+        } catch (IllegalAccessException exception) {
             exception.printStackTrace();
         }
         return null;
@@ -156,8 +150,7 @@ public class Reflex {
             field.setAccessible(true);
             field.set(isStatic ? null : source, value);
             return true;
-        }
-        catch (IllegalAccessException exception) {
+        } catch (IllegalAccessException exception) {
             exception.printStackTrace();
         }
         return false;
@@ -166,8 +159,7 @@ public class Reflex {
     public static Method getMethod(@NotNull Class<?> source, @NotNull String name, @NotNull Class<?>... params) {
         try {
             return source.getDeclaredMethod(name, params);
-        }
-        catch (NoSuchMethodException exception) {
+        } catch (NoSuchMethodException exception) {
             Class<?> superClass = source.getSuperclass();
             return superClass == null ? null : getMethod(superClass, name);
         }
@@ -177,8 +169,7 @@ public class Reflex {
         method.setAccessible(true);
         try {
             return method.invoke(by, param);
-        }
-        catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException exception) {
+        } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException exception) {
             exception.printStackTrace();
         }
         return null;

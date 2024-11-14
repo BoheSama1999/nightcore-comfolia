@@ -27,9 +27,9 @@ import java.util.function.Function;
 @Deprecated
 public abstract class AbstractDataHandler<P extends NightCorePlugin> extends AbstractManager<P> {
 
-    protected final DatabaseConfig    config;
+    protected final DatabaseConfig config;
     protected final AbstractConnector connector;
-    protected final Gson              gson;
+    protected final Gson gson;
 
     public AbstractDataHandler(@NotNull P plugin) {
         this(plugin, getDataConfig(plugin));
@@ -137,8 +137,6 @@ public abstract class AbstractDataHandler<P extends NightCorePlugin> extends Abs
     public void insert(@NotNull String table, @NotNull List<SQLValue> values) {
         InsertQueryExecutor.builder(table).values(values).execute(this.getConnector());
     }
-
-
 
 
     @Deprecated

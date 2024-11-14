@@ -6,6 +6,7 @@ import su.nightexpress.nightcore.util.text.tag.TagUtils;
 import su.nightexpress.nightcore.util.text.tag.decorator.BaseColorDecorator;
 import su.nightexpress.nightcore.util.text.tag.api.ContentTag;
 import su.nightexpress.nightcore.util.text.tag.api.Tag;
+import su.nightexpress.nightcore.util.text.tag.decorator.BaseColorDecorator;
 
 import java.awt.*;
 

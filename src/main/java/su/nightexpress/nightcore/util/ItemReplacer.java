@@ -22,7 +22,7 @@ import java.util.function.UnaryOperator;
 public class ItemReplacer {
 
     private final ItemStack item;
-    private final ItemMeta  meta;
+    private final ItemMeta meta;
 
     //private final PlaceholderMap              placeholderCache;
     //private final List<UnaryOperator<String>> operatorCache;
@@ -59,6 +59,33 @@ public class ItemReplacer {
     @NotNull
     public static ItemReplacer create(@NotNull ItemMeta meta) {
         return new ItemReplacer(meta);
+    }
+
+    public static void replace(@NotNull ItemStack item, @NotNull UnaryOperator<String> replacer) {
+        create(item).trimmed().readMeta().replace(replacer).writeMeta();
+    }
+
+    @Deprecated
+    public static void replace(@NotNull ItemMeta meta, @NotNull UnaryOperator<String> replacer) {
+        create(meta).trimmed().readMeta().replace(replacer).writeMeta();
+    }
+
+    public static void replace(@NotNull ItemStack item, @NotNull PlaceholderMap replacer) {
+        create(item).trimmed().readMeta().replace(replacer).writeMeta();
+    }
+
+    @Deprecated
+    public static void replace(@NotNull ItemMeta meta, @NotNull PlaceholderMap replacer) {
+        create(meta).trimmed().readMeta().replace(replacer).writeMeta();
+    }
+
+    public static void replacePlaceholderAPI(@NotNull ItemStack item, @NotNull Player player) {
+        create(item).trimmed().readMeta().replacePlaceholderAPI(player).writeMeta();
+    }
+
+    @Deprecated
+    public static void replacePlaceholderAPI(@NotNull ItemMeta meta, @NotNull Player player) {
+        create(meta).trimmed().readMeta().replacePlaceholderAPI(player).writeMeta();
     }
 
     @NotNull
@@ -164,6 +191,12 @@ public class ItemReplacer {
     @Deprecated
     public boolean isTrimLore() {
         return trimLore;
+    }
+
+    @NotNull
+    public ItemReplacer setTrimLore(boolean trimLore) {
+        this.trimLore = trimLore;
+        return this;
     }
 
     public boolean isHideFlags() {
@@ -292,6 +325,7 @@ public class ItemReplacer {
     public ItemReplacer injectLore(@NotNull String placeholder, @NotNull List<String> replacer) {
         return this.replace(placeholder, replacer);
     }
+
 
     @NotNull
     @Deprecated

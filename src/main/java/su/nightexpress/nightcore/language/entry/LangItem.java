@@ -35,6 +35,11 @@ public class LangItem extends LangEntry {
         return new LangItem(key, name, Arrays.asList(lore));
     }
 
+    @NotNull
+    public static Builder builder(@NotNull String key) {
+        return new Builder(key);
+    }
+
     @Override
     public void write(@NotNull FileConfig config) {
         config.set(this.path + ".Name", this.defaultText);
@@ -98,7 +103,7 @@ public class LangItem extends LangEntry {
 
     @NotNull
     public List<TextRoot> getWrappedLore() {
-        return this.wrappedLore;
+        return wrappedLore;
     }
 
     public static final String CLICK     = "Click";
@@ -118,8 +123,8 @@ public class LangItem extends LangEntry {
     public static final class Builder {
 
         private final String key;
-        private       String       name;
         private final List<String> lore;
+        private String name;
 
         public Builder(@NotNull String key) {
             this.key = key;

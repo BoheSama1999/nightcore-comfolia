@@ -21,8 +21,7 @@ public class SQLQueries {
             has = tables.next();
             tables.close();
             return has;
-        }
-        catch (SQLException exception) {
+        } catch (SQLException exception) {
             exception.printStackTrace();
             return false;
         }
@@ -45,8 +44,7 @@ public class SQLQueries {
                 }
             }
             return false;
-        }
-        catch (SQLException exception) {
+        } catch (SQLException exception) {
             exception.printStackTrace();
             return false;
         }
@@ -80,8 +78,7 @@ public class SQLQueries {
             }
 
             statement.executeUpdate();
-        }
-        catch (SQLException exception) {
+        } catch (SQLException exception) {
             exception.printStackTrace();
         }
     }
@@ -143,8 +140,7 @@ public class SQLQueries {
                     statement.executeBatch();
                 }
             }
-        }
-        catch (SQLException exception) {
+        } catch (SQLException exception) {
             exception.printStackTrace();
         }
     }
@@ -170,8 +166,7 @@ public class SQLQueries {
                 list.add(dataFunction.apply(resultSet));
             }
             resultSet.close();
-        }
-        catch (SQLException exception) {
+        } catch (SQLException exception) {
             exception.printStackTrace();
         }
         list.removeIf(Objects::isNull);

@@ -20,10 +20,10 @@ public abstract class NightPlugin extends JavaPlugin implements NightCorePlugin 
 
     protected List<Runnable> postLoaders;
 
-    protected LangManager    langManager;
+    protected LangManager langManager;
     protected CommandManager commandManager;
 
-    protected FileConfig    config;
+    protected FileConfig config;
     protected PluginDetails details;
 
 //    public final boolean isEngine() {

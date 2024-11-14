@@ -7,10 +7,10 @@ import su.nightexpress.nightcore.database.sql.column.ColumnType;
 @Deprecated
 public class SQLColumn {
 
-    private final String     name;
-    private final String     nameEscaped;
+    private final String name;
+    private final String nameEscaped;
     private final ColumnType type;
-    private final int        length;
+    private final int length;
 
     public SQLColumn(@NotNull String name, @NotNull ColumnType type, int length) {
         this(name, "`" + name + "`", type, length);

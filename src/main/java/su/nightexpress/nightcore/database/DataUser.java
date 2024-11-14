@@ -22,9 +22,15 @@ public interface DataUser {
 
     long getCachedUntil();
 
+    void setCachedUntil(long cachedUntil);
+
     long getAutoSaveIn();
 
+    void setAutoSaveIn(int seconds);
+
     long getNextSyncIn();
+
+    void setNextSyncIn(int seconds);
 
     void cancelAutoSave();
 
@@ -38,7 +44,8 @@ public interface DataUser {
 
     @NotNull UUID getId();
 
-    @NotNull String getName();
+    @NotNull
+    String getName();
 
     void setName(String name);
 
@@ -52,7 +59,9 @@ public interface DataUser {
 
     boolean isOnline();
 
-    @NotNull OfflinePlayer getOfflinePlayer();
+    @NotNull
+    OfflinePlayer getOfflinePlayer();
 
-    @Nullable Player getPlayer();
+    @Nullable
+    Player getPlayer();
 }

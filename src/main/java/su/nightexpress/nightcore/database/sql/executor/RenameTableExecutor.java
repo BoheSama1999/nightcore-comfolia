@@ -1,8 +1,8 @@
 package su.nightexpress.nightcore.database.sql.executor;
 
 import org.jetbrains.annotations.NotNull;
-import su.nightexpress.nightcore.database.DatabaseType;
 import su.nightexpress.nightcore.database.AbstractConnector;
+import su.nightexpress.nightcore.database.DatabaseType;
 import su.nightexpress.nightcore.database.sql.SQLExecutor;
 import su.nightexpress.nightcore.database.sql.SQLQueries;
 
@@ -10,7 +10,7 @@ import su.nightexpress.nightcore.database.sql.SQLQueries;
 public final class RenameTableExecutor extends SQLExecutor<Void> {
 
     private final DatabaseType databaseType;
-    private       String       renameTo;
+    private String renameTo;
 
     private RenameTableExecutor(@NotNull String table, @NotNull DatabaseType databaseType) {
         super(table);
@@ -37,8 +37,7 @@ public final class RenameTableExecutor extends SQLExecutor<Void> {
         StringBuilder sql = new StringBuilder();
         if (this.databaseType == DatabaseType.MYSQL) {
             sql.append("RENAME TABLE ").append(this.getTable()).append(" TO ").append(this.renameTo).append(";");
-        }
-        else {
+        } else {
             sql.append("ALTER TABLE ").append(this.getTable()).append(" RENAME TO ").append(this.renameTo);
         }
         SQLQueries.executeStatement(connector, sql.toString());

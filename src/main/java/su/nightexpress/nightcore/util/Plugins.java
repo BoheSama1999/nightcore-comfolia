@@ -6,9 +6,11 @@ import su.nightexpress.nightcore.NightCore;
 
 public class Plugins {
 
+    public static final NightCore CORE = NightCore.getPlugin(NightCore.class);
+
     public static final String VAULT           = "Vault";
     public static final String PLACEHOLDER_API = "PlaceholderAPI";
-    public static final String FLOODGATE       = "floodgate";
+    public static final String FLOODGATE = "floodgate";
 
     private static boolean hasPlaceholderAPI;
     private static boolean hasVault;

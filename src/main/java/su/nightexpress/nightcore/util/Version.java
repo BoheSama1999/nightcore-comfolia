@@ -153,18 +153,6 @@ public enum Version {
         return this.ordinal() > version.ordinal();
     }
 
-    public static boolean isAtLeast(@NotNull Version version) {
-        return version.isCurrent() || getCurrent().isHigher(version);
-    }
-
-    public static boolean isAbove(@NotNull Version version) {
-        return getCurrent().isHigher(version);
-    }
-
-    public static boolean isBehind(@NotNull Version version) {
-        return getCurrent().isLower(version);
-    }
-
     public boolean isCurrent() {
         return this == Version.getCurrent();
     }

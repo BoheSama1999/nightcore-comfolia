@@ -7,7 +7,8 @@ import java.util.function.UnaryOperator;
 @Deprecated
 public interface Placeholder {
 
-    @NotNull PlaceholderMap getPlaceholders();
+    @NotNull
+    PlaceholderMap getPlaceholders();
 
     @NotNull
     default UnaryOperator<String> replacePlaceholders() {

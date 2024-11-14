@@ -101,8 +101,7 @@ public class ItemUtil {
             profile.setTextures(textures);
             meta.setOwnerProfile(profile);
             item.setItemMeta(meta);
-        }
-        catch (Exception exception) {
+        } catch (Exception exception) {
             exception.printStackTrace();
         }
     }
